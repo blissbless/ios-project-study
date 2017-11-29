@@ -19,16 +19,14 @@ class ViewController: UIViewController {
     var correctAnswer = 0
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { // use array to shorten code
         super.viewDidLoad()
         
-        button1.layer.borderWidth = 1
-        button2.layer.borderWidth = 1
-        button3.layer.borderWidth = 1
-        
-        button1.layer.borderColor = UIColor.lightGray.cgColor
-        button2.layer.borderColor = UIColor.lightGray.cgColor
-        button3.layer.borderColor = UIColor.lightGray.cgColor
+        let buttons: [UIButton] = [button1, button2, button3]
+        for button in buttons {
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.lightGray.cgColor
+        }
         
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         askQuestion()
